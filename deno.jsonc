@@ -1,0 +1,7 @@
+{
+    "tasks": {
+        // you need to install the build tools globally with something like `npm i -g postcss-cli autoprefixer cssnano postcss-pxtorem`
+        "build": "deno run --allow-run --allow-read --allow-write build.js",
+        "dev": "vite ."
+    }
+}

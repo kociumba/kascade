@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kascade CSS Demo</title>
+    <link rel="stylesheet" href="css/kascade.min.css">
+</head>
+
+<body class="k-body">
+    <div class="k-container">
+        <header>
+            <h1 class="k-h2">Welcome to kascade CSS</h1>
+            <p class="k-paragraph">A cozy and modern CSS library for your projects.</p>
+        </header>
+
+        <main>
+            <section class="k-card">
+                <div class="k-card-header">
+                    Card Example
+                </div>
+                <div class="k-card-body">
+                    <p class="k-paragraph">This is a simple card component using Kascade CSS.</p>
+                    <a href="#" class="k-link k-tooltip-container">Learn More <div class="k-tooltip"> hello there
+                        </div></a>
+                </div>
+            </section>
+
+            <section class="k-form-group">
+                <label for="name" class="k-label">Your Name:</label>
+                <input type="text" id="name" class="k-input" placeholder="Enter your name">
+            </section>
+
+            <section class="k-form-group">
+                <label for="email" class="k-label">Email:</label>
+                <input type="email" id="email" class="k-input k-error" placeholder="Enter your email"
+                    value="invalid-email">
+                <p class="k-form-error-message">Please enter a valid email address.</p>
+            </section>
+
+            <button class="k-button k-button-primary">Primary Button</button>
+            <button class="k-button k-button-secondary">Secondary Button</button>
+            <button class="k-button k-button-accent">Accent Button</button>
+            <button class="k-button k-button-outline-primary">Outline Button</button>
+            <button class="k-button k-error">Error Button</button>
+            <button class="k-button" disabled>Disabled Button</button>
+
+            <div class="k-p-4 k-bg-primary k-text-background">
+                <p class="k-paragraph">This div uses <code class="k-code">k-bg-primary</code> and <code
+                        class="k-code">k-text-background</code> utility classes.</p>
+            </div>
+            <!-- Add these sections inside <main> after existing content -->
+            <section class="k-my-4">
+                <h2 class="k-h3">Typography</h2>
+                <div class="k-card k-p-4">
+                    <h1 class="k-h1">Heading 1</h1>
+                    <h2 class="k-h2">Heading 2</h2>
+                    <h3 class="k-h3">Heading 3</h3>
+                    <p class="k-paragraph">Regular paragraph text with a <a href="#" class="k-link">link example</a>.
+                    </p>
+                    <code class="k-code">Code snippet example</code>
+                </div>
+            </section>
+
+            <section class="k-my-4">
+                <h2 class="k-h3">Components</h2>
+
+                <div class="k-grid k-grid-cols-2 k-gap-4">
+                    <!-- Alerts -->
+                    <div class="k-card k-p-4">
+                        <div class="k-alert k-alert-info">Info Alert</div>
+                        <div class="k-alert k-alert-success">Success Alert</div>
+                        <div class="k-alert k-alert-warning">Warning Alert</div>
+                        <div class="k-alert k-alert-error">Error Alert</div>
+                    </div>
+
+                    <!-- Badges -->
+                    <div class="k-card k-p-4 k-flex k-gap-2 k-flex-wrap">
+                        <span class="k-badge">Default</span>
+                        <span class="k-badge k-badge-secondary">Secondary</span>
+                        <span class="k-badge k-badge-accent">Accent</span>
+                        <span class="k-badge k-badge-success">Success</span>
+                    </div>
+                </div>
+
+                <!-- Breadcrumbs -->
+                <div class="k-card k-p-4 k-mt-4">
+                    <nav class="k-breadcrumbs">
+                        <div class="k-breadcrumb-item">
+                            <a href="#">Home</a>
+                        </div>
+                        <div class="k-breadcrumb-item">
+                            <a href="#">Settings</a>
+                        </div>
+                        <div class="k-breadcrumb-item">
+                            Profile
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Progress & Switch -->
+                <div class="k-grid k-grid-cols-2 k-gap-4 k-mt-4">
+                    <div class="k-card k-p-4">
+                        <div class="k-progress">
+                            <div class="k-progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="k-card k-p-4 k-flex k-items-center">
+                        <label class="k-switch">
+                            <input type="checkbox">
+                            <span class="k-switch-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Accordion -->
+                <div class="k-card k-mt-4">
+                    <div class="k-accordion">
+                        <div class="k-accordion-item">
+                            <div class="k-accordion-header">
+                                Accordion Item 1
+                                <span class="k-accordion-icon">▼</span>
+                            </div>
+                            <div class="k-accordion-content">
+                                Accordion content goes here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="k-paragraph k-text-secondary">Footer text with secondary styling.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
