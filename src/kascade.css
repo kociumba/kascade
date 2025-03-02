@@ -7,36 +7,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    /* Revised Color Palette */
-    --k-color-primary: #c94e51;        /* Kept signature red/pink */
-    --k-color-primary-light: #d67578;   /* Desaturated tint */
+    /* Core Colors */
+    --k-color-primary: #c94e51;
+    --k-color-primary-light: #d67578;
     --k-color-primary-dark: #a33c3f;
-    
-    --k-color-secondary: #686868;      /* Muted gray */
-    --k-color-accent: #D4A7A9;         /* Pastel pink accent */
-    
-    /* Backgrounds - Darker scheme */
-    --k-color-background: #0a0a0a;      /* Darker background */
-    --k-color-surface: #171717;         /* Card surfaces */
-    --k-color-form-control: #262626;    /* Form elements */
-    
-    /* Text */
+    --k-color-secondary: #686868;
+    --k-color-accent: #D4A7A9;
+
+    /* Background Colors */
+    --k-color-background: #0a0a0a;
+    --k-color-surface: #171717;
+    --k-color-surface-hover: #1f1f1f;
+    --k-color-form: #262626;
+
+    /* Text Colors */
     --k-color-text-primary: #f5f5f5;
     --k-color-text-secondary: #a3a3a3;
-    
-    /* Muted Feedback Colors */
-    --k-color-error: #e57373;          /* Pastel red */
-    --k-color-success: #81C784;         /* Pastel green */
-    --k-color-warning: #FFB74D;         /* Muted orange */
-    --k-color-info: #64B5F6;            /* Pastel blue */
-    
+
+    /* Feedback Colors */
+    --k-color-error: #e57373;
+    --k-color-success: #81C784;
+    --k-color-warning: #FFB74D;
+    --k-color-info: #64B5F6;
+
     /* Feedback Backgrounds */
     --k-color-error-bg: #2d0a0f;
     --k-color-success-bg: #0d1f12;
     --k-color-warning-bg: #2d220a;
     --k-color-info-bg: #0a1a2d;
-    
-    /* Grayscale */
+
+    /* Grays */
     --k-gray-100: #262626;
     --k-gray-200: #404040;
     --k-gray-300: #525252;
@@ -62,18 +62,25 @@
     --k-border-radius-lg: 0.5rem;
     --k-border-radius-full: 9999px;
 
-    /* --- Font Family --- */
-    --k-font-family-base: "Bai Jamjuree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --k-font-family-base: "Bai Jamjuree", system-ui, sans-serif;
+    --k-font-size-sm: 0.875rem;
+    --k-font-size-md: 1rem;
+    --k-font-size-lg: 1.125rem;
 
     /* Shadows */
-    --k-shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
-    --k-shadow-md: 0 4px 6px rgba(0,0,0,0.5);
-    --k-shadow-lg: 0 10px 15px rgba(0,0,0,0.6);
+    --k-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --k-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5);
+    --k-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.6);
 
     /* --- Transitions --- */
     --k-transition-fast: 0.15s ease;
     --k-transition-normal: 0.3s ease;
     --k-transition-slow: 0.5s ease;
+
+    /* Component-specific */
+    --k-input-height: 2.5rem;
+    --k-button-min-width: 6rem;
+    --k-badge-height: 1.5rem;
 }
 
 :root::selection {
@@ -81,20 +88,15 @@
     color: var(--k-color-background);
 }
 
-
-/* --- k-body --- */
 .k-body {
     font-family: var(--k-font-family-base);
-    font-size: 1rem;
+    font-size: var(--k-font-size-md);
     line-height: 1.6;
     color: var(--k-color-text-primary);
-    /* Light text for dark background */
     background-color: var(--k-color-background);
-    /* Dark background */
     margin: 0;
 }
 
-/* --- k-container --- */
 .k-container {
     max-width: 1000px;
     margin-left: auto;
@@ -102,7 +104,6 @@
     padding: 0 1.5rem;
 }
 
-/* --- k-visually-hidden --- */
 .k-visually-hidden {
     position: absolute;
     width: 1px;
@@ -112,11 +113,9 @@
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
-    /* added line */
     border: 0;
 }
 
-/* --- k-code --- */
 .k-code {
     font-family: monospace;
     background-color: var(--k-gray-100);
@@ -130,46 +129,37 @@
 /* 2. Typography                      */
 /* ---------------------------------- */
 
-/* --- Headings k-h1 to k-h6 --- */
 .k-h1,
 .k-h2,
-.k-h3,
-.k-h4,
-.k-h5,
-.k-h6 {
+.k-h3 {
     font-weight: bold;
     line-height: 1.2;
     margin-bottom: var(--k-spacing-2);
     color: var(--k-color-text-primary);
-    /* Light text for headings */
 }
 
-.k-h1 { font-size: 2.4rem; line-height: 1.2; }
-.k-h2 { font-size: 2rem; line-height: 1.25; }
-.k-h3 { font-size: 1.75rem; line-height: 1.3; }
-
-.k-h4 {
-    font-size: 1.5rem;
+.k-h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
 }
 
-.k-h5 {
-    font-size: 1.25rem;
+.k-h2 {
+    font-size: 2rem;
+    line-height: 1.25;
 }
 
-.k-h6 {
-    font-size: 1rem;
+.k-h3 {
+    font-size: 1.75rem;
+    line-height: 1.3;
 }
 
-/* --- k-paragraph --- */
 .k-paragraph {
     color: var(--k-color-text-secondary);
     line-height: 1.6;
 }
 
-/* --- k-link --- */
 .k-link {
     color: var(--k-color-primary);
-    /* Rose/Pink link color */
     text-decoration: none;
     transition: color var(--k-transition-fast);
 }
@@ -181,105 +171,7 @@
 
 .k-link:focus {
     outline: 2px solid var(--k-color-primary);
-    /* Example focus style */
     outline-offset: 2px;
-}
-
-
-/* ---------------------------------- */
-/* 3. Colors & Theming Utilities      */
-/* ---------------------------------- */
-
-/* --- Background Colors --- */
-.k-bg-primary {
-    background-color: var(--k-color-primary);
-}
-
-.k-bg-primary-light {
-    background-color: var(--k-color-primary-light);
-}
-
-.k-bg-primary-dark {
-    background-color: var(--k-color-primary-dark);
-}
-
-.k-bg-secondary {
-    background-color: var(--k-color-secondary);
-}
-
-.k-bg-accent {
-    background-color: var(--k-color-accent);
-}
-
-.k-bg-background {
-    background-color: var(--k-color-background);
-}
-
-/* Dark background */
-.k-bg-surface {
-    background-color: var(--k-color-surface);
-}
-
-/* Dark surface color */
-.k-bg-gray-100 {
-    background-color: var(--k-gray-100);
-}
-
-.k-bg-error {
-    background-color: var(--k-color-error);
-}
-
-.k-bg-success {
-    background-color: var(--k-color-success);
-}
-
-.k-bg-warning {
-    background-color: var(--k-color-warning);
-}
-
-.k-bg-info {
-    background-color: var(--k-color-info);
-}
-
-/* --- Text Colors --- */
-.k-text-primary {
-    color: var(--k-color-primary);
-}
-
-.k-text-secondary {
-    color: var(--k-color-secondary);
-}
-
-.k-text-accent {
-    color: var(--k-color-accent);
-}
-
-.k-text-error {
-    color: var(--k-color-error);
-}
-
-.k-text-success {
-    color: var(--k-color-success);
-}
-
-.k-text-warning {
-    color: var(--k-color-warning);
-}
-
-.k-text-info {
-    color: var(--k-color-info);
-}
-
-.k-text-background {
-    color: var(--k-color-text-primary);
-}
-
-.k-text-gray-700 {
-    color: var(--k-gray-700);
-}
-
-.k-text-gray-900 {
-    color: var(--k-gray-900);
 }
 
 
@@ -469,35 +361,28 @@
 /* 5. Forms                           */
 /* ---------------------------------- */
 
-/* --- k-form-group --- */
 .k-form-group {
     margin-bottom: var(--k-spacing-4);
 }
 
-/* --- k-label --- */
 .k-label {
     display: block;
-    /* Make labels take full width */
     font-weight: bold;
     margin-bottom: var(--k-spacing-1);
     color: var(--k-color-text-primary);
 }
 
-/* --- k-input, k-textarea, k-select --- */
 .k-input,
 .k-textarea,
 .k-select {
-    display: block;
     width: 100%;
+    height: var(--k-input-height);
     padding: var(--k-spacing-2);
-    font-size: 1rem;
+    font-size: var(--k-font-size-md);
     border: 1px solid var(--k-gray-300);
-    /* Darker border for dark mode */
     border-radius: var(--k-border-radius-md);
-    background-color: var(--k-color-form-control);
-    /* Use darker color for input background */
+    background-color: var(--k-color-form);
     color: var(--k-color-text-primary);
-    /* Light text for input */
     box-sizing: border-box;
     transition: border-color var(--k-transition-fast), box-shadow var(--k-transition-fast);
 }
@@ -506,7 +391,6 @@
 .k-textarea:focus,
 .k-select:focus {
     outline: 2px solid var(--k-color-primary);
-    /* Rose/Pink focus outline */
     outline-offset: 1px;
     border-color: var(--k-color-primary);
 }
@@ -521,16 +405,13 @@
     cursor: pointer;
     border: 1px solid var(--k-gray-200);
     background-color: var(--k-color-surface);
-    /* Rose/Pink default button color */
     color: var(--k-color-text-primary);
-    /* Light text on button */
     font-weight: bold;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .k-button:hover {
     background-color: var(--k-color-primary-light);
-    /* transform: translateY(-0.5px); */
 }
 
 .k-button:hover,
@@ -564,11 +445,9 @@
 /* --- k-card --- */
 .k-card {
     background-color: var(--k-color-surface);
-    /* Use surface color for card background */
     border: 1px solid var(--k-gray-100);
     border-radius: var(--k-border-radius-md);
     box-shadow: var(--k-shadow-sm);
-    /* Adjust shadow for dark mode */
     overflow: hidden;
     margin-bottom: var(--k-spacing-4);
 }
@@ -580,16 +459,13 @@
 .k-card-header {
     padding: var(--k-spacing-3) var(--k-spacing-4);
     border-bottom: 1px solid var(--k-gray-200);
-    /* Darker border for dark mode */
     font-weight: bold;
     color: var(--k-color-text-primary);
-    /* Light text in header */
 }
 
 .k-card-footer {
     padding: var(--k-spacing-3) var(--k-spacing-4);
     border-top: 1px solid var(--k-gray-200);
-    /* Darker border for dark mode */
 }
 
 /* --- k-alert --- (Base Alert and Variants) */
@@ -599,7 +475,6 @@
     border-radius: var(--k-border-radius-md);
     border: 1px solid var(--k-gray-200);
     border-left: 5px solid var(--k-color-primary);
-    /* Base border style */
     margin-bottom: var(--k-spacing-4);
 }
 
@@ -625,44 +500,51 @@
 
 /* --- k-badge --- */
 .k-badge {
-    display: inline-block;
-    padding: var(--k-spacing-0_5) var(--k-spacing-2);
-    border-radius: var(--k-border-radius-full);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--k-spacing-1) var(--k-spacing-2);
+    border-radius: var(--k-border-radius-md); /* Consistent with alerts/cards */
+    background-color: var(--k-color-surface);
     border: 1px solid var(--k-gray-200);
+    border-left-width: 3px;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    background-color: var(--k-gray-100);
     color: var(--k-color-text-primary);
+    box-shadow: var(--k-shadow-sm);
+    transition: background-color var(--k-transition-fast), color var(--k-transition-fast);
 }
 
+/* Variant modifiers */
 .k-badge-secondary {
-    background-color: var(--k-color-secondary);
+    border-left-color: var(--k-color-secondary);
 }
 
 .k-badge-accent {
+    border-left-color: var(--k-color-accent);
     background-color: var(--k-color-accent);
-    color: var(--k-gray-100);
-    /* Darker text for better contrast with yellow */
 }
 
 .k-badge-success {
-    background-color: var(--k-color-success);
+    background-color: var(--k-color-success-bg);
+    border-left-color: var(--k-color-success);
 }
 
 .k-badge-error {
-    background-color: var(--k-color-error);
+    background-color: var(--k-color-error-bg);
+    border-left-color: var(--k-color-error);
 }
 
 .k-badge-info {
-    background-color: var(--k-color-info);
+    background-color: var(--k-color-info-bg);
+    border-left-color: var(--k-color-info);
 }
 
 .k-badge-warning {
-    background-color: var(--k-color-warning);
-    color: var(--k-gray-100);
-    /* Darker text for better contrast */
+    background-color: var(--k-color-warning-bg);
+    border-left-color: var(--k-color-warning);
 }
 
 /* --- k-tooltip --- */
@@ -728,9 +610,9 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--k-gray-300);
+    background-color: var(--k-gray-200);
     transition: background-color var(--k-transition-normal);
-    border-radius: var(--k-border-radius-full);
+    border-radius: var(--k-border-radius-md);
 }
 
 .k-switch-slider:before {
@@ -740,9 +622,9 @@
     width: 1.25rem;
     left: 0.25rem;
     bottom: 0.25rem;
-    background-color: var(--k-color-text-primary);
+    background-color: var(--k-color-primary);
     transition: transform var(--k-transition-normal);
-    border-radius: 50%;
+    border-radius: var(--k-border-radius-md);
 }
 
 input:checked+.k-switch-slider {
@@ -750,11 +632,12 @@ input:checked+.k-switch-slider {
 }
 
 input:focus+.k-switch-slider {
-    box-shadow: 0 0 1px var(--k-color-primary);
+    box-shadow: 0 0 0px var(--k-color-primary);
 }
 
 input:checked+.k-switch-slider:before {
     transform: translateX(1.75rem);
+    background-color: var(--k-color-accent);
 }
 
 /* --- k-breadcrumbs --- */
@@ -911,10 +794,8 @@ input:checked+.k-switch-slider:before {
 }
 
 .k-error {
-    /* General Error Modifier - can be applied to many elements */
     background-color: var(--k-color-error);
     color: white;
-    /* Or keep text color default, depending on context */
     border-color: var(--k-color-error);
 }
 
@@ -928,13 +809,11 @@ input:checked+.k-switch-slider:before {
 .k-button-secondary {
     background-color: var(--k-color-secondary);
     color: var(--k-color-text-primary);
-    /* Light text on secondary button */
 }
 
 .k-button-accent {
     background-color: var(--k-color-accent);
     color: var(--k-color-background);
-    /* Changed from --k-color-text */
 }
 
 .k-button-outline-primary {
@@ -950,8 +829,7 @@ input:checked+.k-switch-slider:before {
 }
 
 /* --- Applying Modifiers to Base Classes --- */
-.k-button.k-error {
-}
+.k-button.k-error {}
 
 .k-input,
 .k-textarea,
@@ -963,35 +841,35 @@ input:checked+.k-switch-slider:before {
 .k-input.k-error,
 .k-textarea.k-error,
 .k-select.k-error {
-    /* Apply error styles to form elements */
     border-color: var(--k-color-error);
-    /* background-color: #fef2f2; */
-    /* Very light red background for inputs */
 }
 
 @layer components {
+
     /* Add subtle animations */
-    .k-button, .k-card {
+    .k-button,
+    .k-card {
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    
+
     /* Better focus states */
-    .k-button:focus, .k-input:focus {
+    .k-button:focus,
+    .k-input:focus {
         box-shadow: 0 0 0 3px rgba(201, 78, 81, 0.3);
     }
-    
+
     /* More shadcn-like table styling */
     .k-table {
         width: 100%;
         border-collapse: collapse;
         background: var(--k-color-surface);
     }
-    
+
     .k-table th {
         background: var(--k-gray-100);
         border-bottom: 2px solid var(--k-gray-200);
     }
-    
+
     .k-table td {
         border-bottom: 1px solid var(--k-gray-200);
         padding: 0.75rem;
