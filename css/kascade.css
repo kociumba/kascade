@@ -7,73 +7,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    /* --- Revised Color Palette (Dark Mode, Cozy) --- */
-    --k-color-primary: #c94e51;
-    /* Desaturated Rose/Pink - Main Accent */
-    --k-color-primary-light: #d67578;
-    /* Lighter version of primary */
+    /* Revised Color Palette */
+    --k-color-primary: #c94e51;        /* Kept signature red/pink */
+    --k-color-primary-light: #d67578;   /* Desaturated tint */
     --k-color-primary-dark: #a33c3f;
-    /* Darker version of primary */
-    --k-color-secondary: #a3a3a3;
-    /* Medium Gray - Secondary Accent/Details */
-    --k-color-accent: #eab308;
-    /* Warm Yellow/Gold - Subtle Highlight */
-    --k-color-background: #1e1e1e;
-    /* Dark Gray - Main Background */
-    --k-color-surface: #2a2a2a;
-    /* Slightly Lighter Dark Gray - Card Backgrounds, Surfaces */
-    --k-color-form-control: #333333;
-    /* Slightly darker than surface for form inputs */
-    --k-color-text-primary: #f0f0f0;
-    /* Off-White/Very Light Gray - Primary Text */
-    --k-color-text-secondary: #d4d4d4;
-    /* Light Gray - Secondary Text/Subtle Text */
-    --k-color-error: #E53E6C;
-    /* More blue-toned red for error, distinct from primary */
-    --k-color-success: #4caf50;
-    /* Green Success */
-    --k-color-warning: #f59e0b;
-    /* Amber/Orange for warnings */
-    --k-color-info: #3b82f6;
-    /* Blue for informational elements */
-
-    /* --- Revised Grayscale Palette (Warmer Grays) --- */
-    --k-gray-100: #333333;
-    /* Slightly lighter dark gray */
-    --k-gray-200: #4a4a4a;
-    /* Medium-dark gray */
-    --k-gray-300: #616161;
-    /* Medium gray */
-    --k-gray-400: #7a7a7a;
-    /* Medium-light gray */
-    --k-gray-500: #9e9e9e;
-    /* Light-medium gray */
-    --k-gray-600: #bdbdbd;
-    /* Light gray */
-    --k-gray-700: #d4d4d4;
-    /* Very light gray - for secondary text */
-    --k-gray-800: #e0e0e0;
-    /* Off-white */
-    --k-gray-900: #f0f0f0;
-    /* Almost white - for primary text on dark backgrounds */
-
-    /* --- Feedback Colors (Dark Mode Variants) --- */
-    --k-color-error-bg: #4c1219;
-    /* Dark red background for error components */
-    --k-color-error-border: #6f1a25;
-    /* Darker red for error borders */
-    --k-color-success-bg: #1c4a1e;
-    /* Dark green background for success components */
-    --k-color-success-border: #2a6d2f;
-    /* Darker green for success borders */
-    --k-color-warning-bg: #4d3c00;
-    /* Dark amber background for warning components */
-    --k-color-warning-border: #7a5f00;
-    /* Darker amber for warning borders */
-    --k-color-info-bg: #2a4866;
-    /* Dark blue background for info components */
-    --k-color-info-border: #3b6998;
-    /* Darker blue for info borders */
+    
+    --k-color-secondary: #686868;      /* Muted gray */
+    --k-color-accent: #D4A7A9;         /* Pastel pink accent */
+    
+    /* Backgrounds - Darker scheme */
+    --k-color-background: #0a0a0a;      /* Darker background */
+    --k-color-surface: #171717;         /* Card surfaces */
+    --k-color-form-control: #262626;    /* Form elements */
+    
+    /* Text */
+    --k-color-text-primary: #f5f5f5;
+    --k-color-text-secondary: #a3a3a3;
+    
+    /* Muted Feedback Colors */
+    --k-color-error: #e57373;          /* Pastel red */
+    --k-color-success: #81C784;         /* Pastel green */
+    --k-color-warning: #FFB74D;         /* Muted orange */
+    --k-color-info: #64B5F6;            /* Pastel blue */
+    
+    /* Feedback Backgrounds */
+    --k-color-error-bg: #2d0a0f;
+    --k-color-success-bg: #0d1f12;
+    --k-color-warning-bg: #2d220a;
+    --k-color-info-bg: #0a1a2d;
+    
+    /* Grayscale */
+    --k-gray-100: #262626;
+    --k-gray-200: #404040;
+    --k-gray-300: #525252;
+    --k-gray-400: #737373;
+    --k-gray-500: #8a8a8a;
 
     /* --- Spacing, Border Radius, Font Family --- */
     --k-spacing-0: 0;
@@ -97,10 +65,10 @@
     /* --- Font Family --- */
     --k-font-family-base: "Bai Jamjuree", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-    /* --- Shadows --- */
-    --k-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-    --k-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --k-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+    /* Shadows */
+    --k-shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+    --k-shadow-md: 0 4px 6px rgba(0,0,0,0.5);
+    --k-shadow-lg: 0 10px 15px rgba(0,0,0,0.6);
 
     /* --- Transitions --- */
     --k-transition-fast: 0.15s ease;
@@ -133,11 +101,10 @@
 
 /* --- k-container --- */
 .k-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--k-spacing-4);
-    padding-right: var(--k-spacing-4);
+    padding: 0 1.5rem;
 }
 
 /* --- k-visually-hidden --- */
@@ -182,17 +149,9 @@
     /* Light text for headings */
 }
 
-.k-h1 {
-    font-size: 2.5rem;
-}
-
-.k-h2 {
-    font-size: 2rem;
-}
-
-.k-h3 {
-    font-size: 1.75rem;
-}
+.k-h1 { font-size: 2.4rem; line-height: 1.2; }
+.k-h2 { font-size: 2rem; line-height: 1.25; }
+.k-h3 { font-size: 1.75rem; line-height: 1.3; }
 
 .k-h4 {
     font-size: 1.5rem;
@@ -208,9 +167,8 @@
 
 /* --- k-paragraph --- */
 .k-paragraph {
-    margin-bottom: var(--k-spacing-3);
-    color: var(--k-color-text-primary);
-    /* Light text for paragraphs */
+    color: var(--k-color-text-secondary);
+    line-height: 1.6;
 }
 
 /* --- k-link --- */
@@ -566,13 +524,18 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    border: 1px solid transparent;
-    background-color: var(--k-color-primary);
+    border: 1px solid var(--k-gray-200);
+    background-color: var(--k-color-surface);
     /* Rose/Pink default button color */
     color: var(--k-color-text-primary);
     /* Light text on button */
     font-weight: bold;
-    transition: background-color var(--k-transition-fast), border-color var(--k-transition-fast), opacity var(--k-transition-fast);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.k-button:hover {
+    background-color: var(--k-color-primary-light);
+    /* transform: translateY(-0.5px); */
 }
 
 .k-button:hover,
@@ -581,8 +544,9 @@
 }
 
 .k-button:focus {
-    outline: 2px solid var(--k-color-primary);
-    outline-offset: 2px;
+    outline: 1.5px solid var(--k-color-primary-light);
+    outline-offset: 3px;
+    box-shadow: var(--k-shadow-md);
 }
 
 .k-button:disabled {
@@ -606,8 +570,9 @@
 .k-card {
     background-color: var(--k-color-surface);
     /* Use surface color for card background */
+    border: 1px solid var(--k-gray-100);
     border-radius: var(--k-border-radius-md);
-    box-shadow: var(--k-shadow-md);
+    box-shadow: var(--k-shadow-sm);
     /* Adjust shadow for dark mode */
     overflow: hidden;
     margin-bottom: var(--k-spacing-4);
@@ -634,35 +599,33 @@
 
 /* --- k-alert --- (Base Alert and Variants) */
 .k-alert {
+    background-color: var(--k-color-surface);
     padding: var(--k-spacing-3) var(--k-spacing-4);
     border-radius: var(--k-border-radius-md);
-    border: 1px solid transparent;
+    border: 1px solid var(--k-gray-200);
+    border-left: 5px solid var(--k-color-primary);
     /* Base border style */
     margin-bottom: var(--k-spacing-4);
 }
 
 .k-alert-info {
+    border-left-color: var(--k-color-info);
     background-color: var(--k-color-info-bg);
-    border-color: var(--k-color-info-border);
-    color: var(--k-color-text-primary);
 }
 
 .k-alert-success {
     background-color: var(--k-color-success-bg);
-    border-color: var(--k-color-success-border);
-    color: var(--k-color-text-primary);
+    border-left-color: var(--k-color-success);
 }
 
 .k-alert-warning {
     background-color: var(--k-color-warning-bg);
-    border-color: var(--k-color-warning-border);
-    color: var(--k-color-text-primary);
+    border-left-color: var(--k-color-warning);
 }
 
 .k-alert-error {
     background-color: var(--k-color-error-bg);
-    border-color: var(--k-color-error-border);
-    color: var(--k-color-text-primary);
+    border-left-color: var(--k-color-error);
 }
 
 /* --- k-badge --- */
@@ -670,11 +633,12 @@
     display: inline-block;
     padding: var(--k-spacing-0_5) var(--k-spacing-2);
     border-radius: var(--k-border-radius-full);
+    border: 1px solid var(--k-gray-200);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    background-color: var(--k-color-primary);
+    background-color: var(--k-gray-100);
     color: var(--k-color-text-primary);
 }
 
@@ -786,15 +750,15 @@
     border-radius: 50%;
 }
 
-input:checked + .k-switch-slider {
+input:checked+.k-switch-slider {
     background-color: var(--k-color-primary);
 }
 
-input:focus + .k-switch-slider {
+input:focus+.k-switch-slider {
     box-shadow: 0 0 1px var(--k-color-primary);
 }
 
-input:checked + .k-switch-slider:before {
+input:checked+.k-switch-slider:before {
     transform: translateX(1.75rem);
 }
 
@@ -959,29 +923,26 @@ input:checked + .k-switch-slider:before {
     border-color: var(--k-color-error);
 }
 
-/* --- Variant Modifiers (Button Examples) --- */
+/* --- Variant Modifiers --- */
 .k-button-primary {
-    /* Example: Primary button variant - Rose/Pink */
     background-color: var(--k-color-primary);
     color: var(--k-color-text-primary);
+    border-color: var(--k-color-primary-dark);
 }
 
 .k-button-secondary {
-    /* Example: Secondary button variant - Medium Gray */
     background-color: var(--k-color-secondary);
     color: var(--k-color-text-primary);
     /* Light text on secondary button */
 }
 
 .k-button-accent {
-    /* Example: Accent button variant - Warm Yellow/Gold */
     background-color: var(--k-color-accent);
     color: var(--k-color-background);
-    /* Darker text for contrast with yellow */
+    /* Changed from --k-color-text */
 }
 
 .k-button-outline-primary {
-    /* Example: Outline button - Rose/Pink outline */
     background-color: transparent;
     color: var(--k-color-primary);
     border-color: var(--k-color-primary);
@@ -993,18 +954,15 @@ input:checked + .k-switch-slider:before {
     color: var(--k-color-text-primary);
 }
 
-/* --- Applying Modifiers to Base Classes (Example - Error Button) --- */
+/* --- Applying Modifiers to Base Classes --- */
 .k-button.k-error {
-    /* Apply general error styles to buttons */
-    /* In this example, the .k-error class already defines the error styles.
-     If you wanted button-specific error styles, you'd add them here. */
 }
 
 .k-input,
 .k-textarea,
 .k-select {
-    background-color: var(--k-gray-100);
-    /* Slightly darker than surface */
+    background-color: var(--k-color-surface);
+    border: 1px solid var(--k-gray-200);
 }
 
 .k-input.k-error,
@@ -1014,4 +972,33 @@ input:checked + .k-switch-slider:before {
     border-color: var(--k-color-error);
     /* background-color: #fef2f2; */
     /* Very light red background for inputs */
+}
+
+@layer components {
+    /* Add subtle animations */
+    .k-button, .k-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    /* Better focus states */
+    .k-button:focus, .k-input:focus {
+        box-shadow: 0 0 0 3px rgba(201, 78, 81, 0.3);
+    }
+    
+    /* More shadcn-like table styling */
+    .k-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--k-color-surface);
+    }
+    
+    .k-table th {
+        background: var(--k-gray-100);
+        border-bottom: 2px solid var(--k-gray-200);
+    }
+    
+    .k-table td {
+        border-bottom: 1px solid var(--k-gray-200);
+        padding: 0.75rem;
+    }
 }
