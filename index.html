@@ -13,7 +13,6 @@
         <header class="k-my-4">
             <h1 class="k-h1">Kascade CSS</h1>
             <p class="k-paragraph">A cozy, modern CSS library with dark mode aesthetics</p>
-
             <nav class="k-breadcrumbs k-mb-4">
                 <div class="k-breadcrumb-item">
                     <a href="#" class="k-link">Home</a>
@@ -21,31 +20,31 @@
                 <div class="k-breadcrumb-item">
                     <a href="#" class="k-link">Components</a>
                 </div>
-                <div class="k-breadcrumb-item">
-                    Demo
-                </div>
+                <div class="k-breadcrumb-item">Demo</div>
             </nav>
         </header>
 
         <main class="k-grid k-gap-4">
-            <!-- Typography Section -->
+            <!-- Typography -->
             <section class="k-card">
                 <div class="k-card-header">Typography</div>
                 <div class="k-card-body k-grid k-gap-2">
                     <h1 class="k-h1">Heading 1</h1>
                     <h2 class="k-h2">Heading 2</h2>
                     <h3 class="k-h3">Heading 3</h3>
-                    <p class="k-paragraph">Regular paragraph with a 
-                        <a href="#" class="k-link">link example</a>
+                    <p class="k-paragraph">
+                        This is a sample paragraph with a
+                        <a href="#" class="k-link">link</a> and an inline
+                        <code class="k-code">code snippet</code>.
                     </p>
-                    <div class="k-tooltip-container">tooltip example
-                        <div class="k-tooltip">tooltip content</div>
+                    <div class="k-tooltip-container">
+                        Hover for tooltip
+                        <div class="k-tooltip">Tooltip content here</div>
                     </div>
-                    <code class="k-code">console.log('Code example');</code>
                 </div>
             </section>
 
-            <!-- Interactive Components -->
+            <!-- Form Elements -->
             <section class="k-card">
                 <div class="k-card-header">Form Elements</div>
                 <div class="k-card-body k-grid k-gap-4">
@@ -53,31 +52,28 @@
                         <label for="name" class="k-label">Name:</label>
                         <input type="text" id="name" class="k-input" placeholder="Enter name">
                     </div>
-
                     <div class="k-form-group">
                         <label for="email" class="k-label">Email:</label>
                         <input type="email" id="email" class="k-input k-error" value="invalid@example">
                         <p class="k-form-error-message">Valid email required</p>
                     </div>
-
                     <div class="k-flex k-gap-2 k-flex-wrap">
                         <button class="k-button k-button-primary">Primary</button>
                         <button class="k-button k-button-secondary">Secondary</button>
                         <button class="k-button k-button-accent">Accent</button>
                         <button class="k-button" disabled>Disabled</button>
                     </div>
-
                     <label class="k-flex k-items-center k-gap-2">
                         <span class="k-switch">
                             <input type="checkbox">
                             <span class="k-switch-slider"></span>
                         </span>
-                        <span>Toggle switch</span>
+                        <span>Toggle Switch</span>
                     </label>
                 </div>
             </section>
 
-            <!-- Status Components -->
+            <!-- Status Components: Alerts & Badges -->
             <div class="k-grid k-grid-cols-2 k-gap-4">
                 <!-- Alerts -->
                 <div class="k-card">
@@ -89,21 +85,24 @@
                         <div class="k-alert k-alert-error">Error alert</div>
                     </div>
                 </div>
-
                 <!-- Badges -->
                 <div class="k-card">
                     <div class="k-card-header">Badges</div>
                     <div class="k-card-body k-flex k-gap-2 k-flex-wrap">
                         <span class="k-badge">Default</span>
-                        <span class="k-badge k-badge-info">Secondary</span>
-                        <span class="k-badge k-badge-warning">Accent</span>
-                        <span class="k-badge k-badge-error">Success</span>
+                        <span class="k-badge k-badge-secondary">Secondary</span>
+                        <span class="k-badge k-badge-accent">Accent</span>
+                        <span class="k-badge k-badge-success">Success</span>
+                        <span class="k-badge k-badge-error">Error</span>
+                        <span class="k-badge k-badge-info">Info</span>
+                        <span class="k-badge k-badge-warning">Warning</span>
                     </div>
                 </div>
             </div>
 
             <!-- Progress & Accordion -->
             <div class="k-grid k-gap-4">
+                <!-- Progress Bar -->
                 <div class="k-card">
                     <div class="k-card-header">Progress</div>
                     <div class="k-card-body">
@@ -112,28 +111,136 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- Accordion -->
                 <div class="k-card">
                     <div class="k-card-header">Accordion</div>
                     <div class="k-accordion">
-                        <div class="k-accordion-item k-active">
+                        <div class="k-accordion-item">
                             <div class="k-accordion-header">
-                                First Item
+                                Accordion Item 1
                                 <span class="k-accordion-icon">▼</span>
                             </div>
                             <div class="k-accordion-content">
-                                Accordion content example
+                                This is the content for accordion item 1.
+                            </div>
+                        </div>
+                        <div class="k-accordion-item">
+                            <div class="k-accordion-header">
+                                Accordion Item 2
+                                <span class="k-accordion-icon">▼</span>
+                            </div>
+                            <div class="k-accordion-content">
+                                This is the content for accordion item 2.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Tabs -->
+            <section class="k-card">
+                <div class="k-card-header">Tabs</div>
+                <div class="k-card-body">
+                    <div class="k-tabs k-mb-4">
+                        <div class="k-tab k-active">Tab 1</div>
+                        <div class="k-tab">Tab 2</div>
+                        <div class="k-tab">Tab 3</div>
+                    </div>
+                    <div class="k-tab-content k-active">
+                        <p>This is the content for Tab 1.</p>
+                    </div>
+                    <div class="k-tab-content">
+                        <p>This is the content for Tab 2.</p>
+                    </div>
+                    <div class="k-tab-content">
+                        <p>This is the content for Tab 3.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Table -->
+            <section class="k-card">
+                <div class="k-card-header">Table</div>
+                <div class="k-card-body">
+                    <table class="k-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alice</td>
+                                <td>Developer</td>
+                                <td>alice@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>Bob</td>
+                                <td>Designer</td>
+                                <td>bob@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>Charlie</td>
+                                <td>Product Manager</td>
+                                <td>charlie@example.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </main>
 
         <footer class="k-my-8 k-text-center">
-            <p class="k-paragraph k-text-secondary">© 2025 kascade CSS by <a href="https://github.com/kociumba">@kociumba</a></p>
+            <p class="k-paragraph k-text-secondary">
+                © 2025 Kascade CSS by <a href="https://github.com/kociumba" class="k-link">@kociumba</a>
+            </p>
         </footer>
     </div>
+
+    <!-- Basic JavaScript for interactive movement -->
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.k-accordion-header').forEach(header => {
+            header.addEventListener('click', function () {
+                const item = this.parentElement;
+                // Toggle active state
+                item.classList.toggle('k-active');
+                // Optionally change the accordion icon
+                const icon = this.querySelector('.k-accordion-icon');
+                if (item.classList.contains('k-active')) {
+                    icon.textContent = '▲';
+                } else {
+                    icon.textContent = '▼';
+                }
+            });
+        });
+
+        // Tabs functionality
+        const tabs = document.querySelectorAll('.k-tab');
+        const tabContents = document.querySelectorAll('.k-tab-content');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', function () {
+                // Remove active state from all tabs and contents
+                tabs.forEach(t => t.classList.remove('k-active'));
+                tabContents.forEach(content => content.classList.remove('k-active'));
+                // Activate clicked tab and corresponding content
+                this.classList.add('k-active');
+                tabContents[index].classList.add('k-active');
+            });
+        });
+
+        // Progress Bar Animation
+        const progressBar = document.querySelector('.k-progress-bar');
+        let progress = 0;
+        setInterval(() => {
+            progress += 0.5; // Adjust speed here
+            if (progress > 100) progress = 0;
+            progressBar.style.width = progress + '%';
+        }, 50);
+    </script>
 </body>
 
 </html>
