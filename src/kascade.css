@@ -81,11 +81,44 @@
     --k-input-height: 2.5rem;
     --k-button-min-width: 6rem;
     --k-badge-height: 1.5rem;
+
+    --k-focus-ring: 0 0 0 3px rgba(201, 78, 81, 0.3);
+    --k-focus-outline: 1.5px solid var(--k-color-primary-light);
+    --k-focus-offset: 3px;
 }
 
 :root::selection {
     background-color: var(--k-color-primary);
     color: var(--k-color-background);
+}
+
+/* Global focus styling */
+*:focus-visible {
+    outline: var(--k-focus-outline);
+    outline-offset: var(--k-focus-offset);
+    box-shadow: var(--k-focus-ring);
+    transition: box-shadow var(--k-transition-fast), 
+                outline var(--k-transition-fast);
+}
+
+/* Remove conflicting individual focus styles */
+.k-input:focus,
+.k-textarea:focus,
+.k-select:focus,
+.k-button:focus {
+    outline: var(--k-focus-outline) !important;
+    outline-offset: var(--k-focus-offset) !important;
+    box-shadow: var(--k-focus-ring) !important;
+    border-color: transparent !important;
+}
+
+.k-input,
+.k-textarea,
+.k-select,
+.k-button {
+    transition: border-color var(--k-transition-fast),
+                box-shadow var(--k-transition-fast),
+                outline var(--k-transition-fast);
 }
 
 .k-body {
@@ -838,10 +871,9 @@
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* Better focus states */
     .k-button:focus,
     .k-input:focus {
-        box-shadow: 0 0 0 3px rgba(201, 78, 81, 0.3);
+        box-shadow: var(--k-focus-ring);
     }
 
     /* More shadcn-like table styling */
