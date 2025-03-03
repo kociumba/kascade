@@ -17,6 +17,7 @@
     /* Background Colors */
     --k-color-background: #0a0a0a;
     --k-color-surface: #171717;
+    --k-color-surface-transparent: #17171783;
     --k-color-surface-hover: #1f1f1f;
     --k-color-form: #262626;
 
@@ -31,10 +32,10 @@
     --k-color-info: #64B5F6;
 
     /* Feedback Backgrounds */
-    --k-color-error-bg: #2d0a0f;
-    --k-color-success-bg: #0d1f12;
-    --k-color-warning-bg: #2d220a;
-    --k-color-info-bg: #0a1a2d;
+    --k-color-error-bg: #e573732e;
+    --k-color-success-bg: #81C7842e;
+    --k-color-warning-bg: #FFB74D2e;
+    --k-color-info-bg: #64B5F62e;
 
     /* Grays */
     --k-gray-100: #262626;
@@ -102,8 +103,8 @@
     outline: var(--k-focus-outline);
     outline-offset: var(--k-focus-offset);
     box-shadow: var(--k-focus-ring);
-    transition: box-shadow var(--k-transition-fast), 
-                outline var(--k-transition-fast);
+    transition: box-shadow var(--k-transition-fast),
+        outline var(--k-transition-fast);
 }
 
 /* Remove conflicting individual focus styles */
@@ -122,8 +123,8 @@
 .k-select,
 .k-button {
     transition: border-color var(--k-transition-fast),
-                box-shadow var(--k-transition-fast),
-                outline var(--k-transition-fast);
+        box-shadow var(--k-transition-fast),
+        outline var(--k-transition-fast);
 }
 
 .k-body {
@@ -443,6 +444,7 @@
     background-color: var(--k-color-surface);
     border: 1px solid var(--k-gray-100);
     border-radius: var(--k-border-radius-md);
+    /* backdrop-filter: blur(10px);  idk man*/
     box-shadow: var(--k-shadow-sm);
     overflow: hidden;
     margin-bottom: var(--k-spacing-4);
@@ -472,6 +474,9 @@
     border: 1px solid var(--k-gray-200);
     border-left: 5px solid var(--k-color-primary);
     margin-bottom: var(--k-spacing-4);
+    overflow: hidden;
+    position: relative;
+    /* damn this shit cursed, removing this breaks the ::after xd */
 }
 
 .k-alert-info {
@@ -479,9 +484,29 @@
     background-color: var(--k-color-info-bg);
 }
 
+.k-alert-info::after {
+    background-image: linear-gradient(115deg,
+            transparent 0%,
+            var(--k-color-info) 25%,
+            transparent 47%,
+            transparent 53%,
+            var(--k-color-info) 75%,
+            transparent 100%);
+}
+
 .k-alert-success {
     background-color: var(--k-color-success-bg);
     border-left-color: var(--k-color-success);
+}
+
+.k-alert-success::after {
+    background-image: linear-gradient(115deg,
+            transparent 0%,
+            var(--k-color-success) 25%,
+            transparent 47%,
+            transparent 53%,
+            var(--k-color-success) 75%,
+            transparent 100%);
 }
 
 .k-alert-warning {
@@ -489,9 +514,50 @@
     border-left-color: var(--k-color-warning);
 }
 
+.k-alert-warning::after {
+    background-image: linear-gradient(115deg,
+            transparent 0%,
+            var(--k-color-warning) 25%,
+            transparent 47%,
+            transparent 53%,
+            var(--k-color-warning) 75%,
+            transparent 100%);
+}
+
 .k-alert-error {
     background-color: var(--k-color-error-bg);
     border-left-color: var(--k-color-error);
+}
+
+.k-alert-error::after {
+    background-image: linear-gradient(115deg,
+            transparent 0%,
+            var(--k-color-error) 25%,
+            transparent 47%,
+            transparent 53%,
+            var(--k-color-error) 75%,
+            transparent 100%);
+}
+
+.k-alert::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(.5) contrast(1) saturate(1);
+    background-position: 50% 50%;
+    background-size: 300% 300%;
+    display: block;
+    pointer-events: none;
+    mix-blend-mode: color-dodge;
+    transition: var(--k-transition-normal);
+}
+
+.k-alert:hover::after {
+    background-size: 500% 500%;
+    /* filter: brightness(0.7) contrast(1), saturate(2); */
 }
 
 /* --- k-badge --- */
