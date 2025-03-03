@@ -14,13 +14,13 @@ async function buildCSS() {
 
     // Autoprefixing
     await runCommand(
-        "postcss --allow-run --use autoprefixer postcss-pxtorem --no-map --output css/kascade.css src/kascade.css"
+        "postcss --use autoprefixer postcss-pxtorem --no-map --output css/kascade.css src/kascade.css"
     );
     console.log("Autoprefixing complete.");
 
     // Minifying
     await runCommand(
-        "postcss --allow-run --use cssnano --no-map -o css/kascade.min.css src/kascade.css"
+        "postcss --use cssnano --no-map -o css/kascade.min.css src/kascade.css"
     );
     console.log("Minification complete.");
     console.log("CSS build finished.");
